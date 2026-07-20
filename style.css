@@ -1,0 +1,330 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#050505;
+overflow-x:hidden;
+color:white;
+text-align:center;
+}
+
+/* Background */
+
+#stars{
+position:fixed;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle,white 1px,transparent 1px);
+background-size:40px 40px;
+opacity:.15;
+z-index:-3;
+}
+
+#particles{
+position:fixed;
+width:100%;
+height:100%;
+background:linear-gradient(180deg,#0d0d0d,#000);
+z-index:-4;
+}
+
+/* Sections */
+
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:30px;
+}
+
+/* Hidden */
+
+.hidden{
+display:none;
+}
+
+/* Intro */
+
+.title{
+font-size:50px;
+font-family:'Great Vibes',cursive;
+color:#ffd86b;
+text-shadow:0 0 20px gold;
+animation:fade 2s;
+}
+
+.subtitle{
+margin-top:20px;
+font-size:20px;
+opacity:.8;
+}
+
+#startBtn{
+margin-top:40px;
+padding:18px 40px;
+border:none;
+border-radius:40px;
+font-size:20px;
+cursor:pointer;
+background:linear-gradient(45deg,#ff4081,#ff9800);
+color:white;
+box-shadow:0 0 30px hotpink;
+transition:.4s;
+}
+
+#startBtn:hover{
+transform:scale(1.08);
+}
+
+/* Gift */
+
+#giftBox{
+font-size:120px;
+cursor:pointer;
+animation:float 2.5s ease-in-out infinite;
+transition:.5s;
+}
+
+#giftBox:hover{
+transform:scale(1.15);
+}
+
+.giftText{
+margin-top:20px;
+font-size:22px;
+}
+
+/* Gallery */
+
+.slider{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+margin-top:40px;
+}
+
+.slider img{
+width:260px;
+height:340px;
+object-fit:cover;
+border-radius:25px;
+box-shadow:0 0 25px hotpink;
+transition:.4s;
+}
+
+.slider img:hover{
+transform:scale(1.05);
+}
+
+/* Message */
+
+#messageSection h2{
+font-size:45px;
+color:#ffd86b;
+margin-bottom:30px;
+}
+
+#typing{
+max-width:800px;
+font-size:22px;
+line-height:1.9;
+}
+
+/* Final */
+
+#final h1{
+font-size:60px;
+font-family:'Great Vibes',cursive;
+color:#ff66aa;
+text-shadow:0 0 30px hotpink;
+}
+
+#final h2{
+margin:20px;
+font-size:35px;
+}
+
+#final p{
+font-size:22px;
+max-width:700px;
+line-height:1.8;
+}
+
+#secretBtn{
+margin-top:40px;
+padding:18px 40px;
+border:none;
+border-radius:40px;
+background:#ff4081;
+color:white;
+font-size:20px;
+cursor:pointer;
+box-shadow:0 0 20px hotpink;
+}
+
+/* Letter */
+
+#letter{
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.85);
+display:none;
+justify-content:center;
+align-items:center;
+}
+
+.letterBox{
+width:90%;
+max-width:650px;
+background:white;
+color:black;
+padding:35px;
+border-radius:25px;
+animation:zoom .5s;
+}
+
+.letterBox h2{
+margin-bottom:20px;
+font-family:'Great Vibes',cursive;
+font-size:45px;
+}
+
+.letterBox p{
+line-height:2;
+font-size:18px;
+}
+
+#closeLetter{
+margin-top:30px;
+padding:14px 30px;
+border:none;
+background:#ff4081;
+color:white;
+border-radius:30px;
+cursor:pointer;
+}
+
+/* Animations */
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-18px);}
+100%{transform:translateY(0);}
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes zoom{
+from{
+transform:scale(.5);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.title{
+font-size:38px;
+}
+
+#giftBox{
+font-size:90px;
+}
+
+.slider img{
+width:90%;
+height:auto;
+}
+
+#typing{
+font-size:18px;
+}
+
+#final h1{
+font-size:42px;
+}
+
+}
+/* Loader */
+
+#loader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#000;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.loading-bar{
+width:250px;
+height:8px;
+background:#333;
+border-radius:20px;
+margin-top:20px;
+overflow:hidden;
+}
+
+.progress{
+width:0%;
+height:100%;
+background:linear-gradient(90deg,#ff4081,#ffd86b);
+animation:load 4s linear forwards;
+}
+
+@keyframes load{
+0%{width:0%;}
+100%{width:100%;}
+}
+
+/* Floating Hearts */
+
+.heart{
+position:fixed;
+font-size:20px;
+animation:fly 8s linear forwards;
+pointer-events:none;
+z-index:10;
+}
+
+@keyframes fly{
+0%{
+transform:translateY(0) scale(1);
+opacity:1;
+}
+100%{
+transform:translateY(-110vh) scale(1.8);
+opacity:0;
+}
+}
